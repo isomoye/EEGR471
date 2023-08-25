@@ -23,7 +23,13 @@ README's are written in a language called markdown. It would be useful to get a 
 
 <h2> Class Material </h2>
 
-To begin, make sure you have git installed on your machine/VM.
+### Instructions.
+
+## To begin:
+
+Create a Ubuntu VM with at least 60GB of disk memory and 4GB or Ram
+
+make sure you have git installed on your machine/VM.
 
 open terminal and navigate to a directory you would like to work form.
 
@@ -36,6 +42,14 @@ This will download a copy of the class repository to your machine
 you must then create a branch so that you can submit your assignments
 
 ``git checkout -b [firstname_lastname]``
+
+# Week By Week
+
+for each week there will be a folder in named week[x], for Week 1 it is [week1](week1).
+
+In that folder there will be a docs folder [docs](week1/docs) which will contain [```instructions.txt```](week1/docs/instructions.txt). 
+
+Open and follow instructions.
 
 
 
