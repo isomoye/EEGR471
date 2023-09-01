@@ -51,5 +51,11 @@ In that folder there will be a docs folder [docs](week1/docs) which will contain
 
 Open and follow instructions.
 
+## Week 2
+
+Navigate to [Week2](week2) and then to [Week2 Instructions](week2/instructions.md)
+
+Open and follow instructions
+
 
 
