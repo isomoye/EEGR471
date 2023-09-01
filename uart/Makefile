@@ -1,22 +1,28 @@
-all:	lint testbench
+all: clean lint sim
 
 lint:	$(wildcard *.v)
-	verilator --lint-only uart.v
+	verilator --lint-only src/*.v
 
 SRC_FILE=src/*.v
-INC_DIR= +incdir+=../eegr_417/src
+INC_DIR= +incdir+=/src/*
 
-testbench:	$(wildcard *.v)
-	iverilog -Wall -y src  src/uart.v -o $@
+testbench:
+	iverilog -c file_list.txt -Wall tb/testbench.v -o $@ 
 
-tb_class:	$(wildcard *.v) $(wildcard *.sv) $(wildcard *.svh)
-	iverilog -Wall -g2012 -y tb tb/tb_uart_class.sv -o $@
+tb_layered:
+	iverilog -Wall -g2012  -c file_list.txt -Wall tb tb/tb_uart_layered.sv -o $@
 
-check:	clean testbench
+tb_class:
+	iverilog -Wall -g2012  -c file_list.txt -Wall tb tb/tb_uart_class.sv -o $@
+
+sim: clean testbench
 	vvp ./testbench
 
-check_class: clean tb_class
+sim_layered: clean tb_layered
+	vvp ./tb_layered
+
+sim_class: clean tb_class
 	vvp ./tb_class
 
 clean:
-	rm -f testbench tb_class *.vcd
+	rm -f testbench tb_layered tb_class *.vcd

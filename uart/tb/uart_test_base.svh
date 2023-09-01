@@ -1,22 +1,20 @@
 `include "uart_intf.sv"
 
 class uart_test_base;
-  int         num_pkts             = 10;
-  int         C_BIT_PERIOD         = 50000000 / 115200;
-  
-  virtual uart_intf uart_if;
+  int                     num_pkts             = 10;
+  int                     C_BIT_PERIOD         = 50000000 / 115200;
+
+  virtual uart_intf       uart_if;
 
   //holder for generated data
-  logic [7:0] uart_rx_gen_data[$];
+  logic             [7:0] uart_rx_gen_data[$];
   //holder for monitored data
-  logic [7:0] uart_rx_mon_data[$];
+  logic             [7:0] uart_rx_mon_data[$];
 
-  function new(int C_BIT_PERIOD,
-               int num_pkts,
-               virtual uart_intf uart_if);
+  function new(int C_BIT_PERIOD, int num_pkts, virtual uart_intf uart_if);
     this.C_BIT_PERIOD = C_BIT_PERIOD;
     this.num_pkts     = num_pkts;
-    this.uart_if = uart_if;
+    this.uart_if      = uart_if;
 
   endfunction  //new()
 
@@ -131,7 +129,7 @@ class uart_test_base;
       end
     end
   endtask
-  
+
   task timeout;
     #500000;
   endtask
@@ -139,12 +137,12 @@ class uart_test_base;
   task test;
     begin
 
-    fork
-     uart_gen();
-       uart_rx_drive();
-       uart_rx_monitor();
-       uart_rx_scoreboard();
-  //       timeout();
+      fork
+        uart_gen();
+        uart_rx_drive();
+        uart_rx_monitor();
+        uart_rx_scoreboard();
+        //       timeout();
       join_any
     end
   endtask

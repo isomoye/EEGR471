@@ -9,13 +9,13 @@ module tb_uart_class ();
   // `include "../src/transmitter.v"
   // `include "../src/receiver.v"
   // `include "../src/baud_rate_gen.v"
-//  `include "uart_intf.sv"
+  //  `include "uart_intf.sv"
 
   //clk
-  logic       clk_50m = 0;
+  logic clk_50m = 0;
 
   //uart signals
-  uart_intf uart_if();
+  uart_intf uart_if ();
 
   //testbench queues
   //holder for generated data
@@ -35,15 +35,15 @@ module tb_uart_class ();
 
   //instanciate uart dut
   uart uart_dut (
-    .din    (uart_if.din),
-    .wr_en  (uart_if.wr_en),
+      .din    (uart_if.din),
+      .wr_en  (uart_if.wr_en),
       .clk_50m(clk_50m),
-    .tx     (uart_if.tx),
-    .tx_busy(uart_if.tx_busy),
-    .rx     (uart_if.rx),
-    .rdy    (uart_if.rdy),
-    .rdy_clr(uart_if.rdy_clr),
-    .dout   (uart_if.dout)
+      .tx     (uart_if.tx),
+      .tx_busy(uart_if.tx_busy),
+      .rx     (uart_if.rx),
+      .rdy    (uart_if.rdy),
+      .rdy_clr(uart_if.rdy_clr),
+      .dout   (uart_if.dout)
   );
 
   uart_test_base uart_tst;
@@ -52,7 +52,7 @@ module tb_uart_class ();
     $dumpfile("uart.vcd");
     $dumpvars(0, tb_uart);
     #10;
-    uart_tst = new(C_BIT_PERIOD, num_pkts,uart_if);
+    uart_tst = new(C_BIT_PERIOD, num_pkts, uart_if);
     uart_tst.test();
     $display("done test");
     #1;
