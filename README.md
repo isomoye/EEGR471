@@ -59,5 +59,7 @@ Navigate to [Week2](week2) and then to [Week2 Instructions](week2/instructions.m
 
 Open and follow instructions
 
+Week 2 assignment is due ``Sunday September 10th``.
+
 
 
