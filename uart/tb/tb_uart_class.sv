@@ -1,4 +1,3 @@
-`include "uart_test_base.svh"
 
 module tb_uart_class ();
   localparam int c_CLOCK_PERIOD_NS = 40;
@@ -50,7 +49,7 @@ module tb_uart_class ();
 
   initial begin : start_test
     $dumpfile("uart.vcd");
-    $dumpvars(0, tb_uart);
+    $dumpvars(0, tb_uart_class);
     #10;
     uart_tst = new(C_BIT_PERIOD, num_pkts, uart_if);
     uart_tst.test();

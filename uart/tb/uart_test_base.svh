@@ -1,4 +1,3 @@
-`include "uart_intf.sv"
 
 class uart_test_base;
   int                     num_pkts             = 10;
