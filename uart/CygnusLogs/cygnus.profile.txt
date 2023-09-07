@@ -1,0 +1,48 @@
+----------------------------------------------------------------
+Performace Summary for Server
+Finish with PID: 124092
+----------------------------------------------------------------
+Total Elapsed Time:   0.00s
+- Init Time:          0.00s
+- Sync Time:          0.00s
+ -- Process Time:     0.00s
+ -- Wait Time:        0.00s
+Total Imbalance Time: 0.00s
+----------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------
+Distsim Performance Summary 
+Minimum Active Sim Time: Sum of  max{active sim time of simv1, active sim time of simv2 etc..} per sync) 
+Gain: It is Total Active Sim Time divided by Elapsed Time 
+Maximum Theoretical Gain: It is Total Active Sim Time divided by Minimum Active Sim Time 
+Total Overhead percent:(Elapsed Time - Minimum Active Sim Time)*100/Minimum Active Sim Time 
+CPS : Total Sync Points divided by Active Sim Time
+Distsim CPS : Total Sync Points divided by Elapsed Time
+----------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------
+Performace Summary for Client: <Client ID>
+Total Sync Points: Number of Syncs based on Master Sync Signal or interval.
+Total Elapsed Time: It is total real elapsed time by the Client.
+Init Time: It is the time spent from beginning till first sync.
+Active Sim Time: It is the time elapsed in running simulation apart from distsim processing.
+Process Time: It is the time spent in fetching and putting the data.
+Wait Time: It is the time spent in waiting for messages as well as in network calls.
+Imbalance Time: It is the sum pf imbalance in each Sync point with respect to maximum imbalanced Client.
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Performace Summary for Server
+Total Elapsed Time: It is total real elapsed time for Server Process.
+Init Time: It is time from beginning till first sync.
+Sync Time: It is time between first and last Sync point.
+Process Time: It is the time spent by Server in processing the data received and to be sent.
+Wait Time: It is the time spent in waiting for Client's messages as well as in network calls.
+Total Imbalance Time: It is the sum of imbalance in each Sync point amongst the Clients.

@@ -72,7 +72,7 @@ Push your work to your branch
 
 ```git commit -a -m '[firstname_lastname week1 submission]```
 
-`` git push `` 
+`` git push --set-upstream origin firstname_lastname`` 
 
 
 
