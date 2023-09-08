@@ -1,0 +1,128 @@
+0
+40
++cli+4
++define+ASSERT_ON+COVER_ON
++incdir+/usr/synopsys/vcs/vcs/T-2022.06-SP2-2//packages/sva
++itf+/usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/vcsdp.tab
++libext+.sv
++memcbk
++vc
++vcsd
++vpi
+-Mamsrun=
+-Masflags=--32
+-Mcc=gcc
+-Mcfl= -pipe -m32 -O -I/usr/synopsys/vcs/vcs/T-2022.06-SP2-2/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -m32 -m32 -rdynamic
+-Mobjects= /usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/libvirsim.so /usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/liberrorinf.so /usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/libsnpsmalloc.so /usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/vcs_save_restore_new.o
+-Msyslibs=/usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/ctype-stubs_32.a -ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -m32 -I/usr/synopsys/vcs/vcs/T-2022.06-SP2-2/include
+-Mxllcflags=
+-Xcbug=0x1
+-cm
+-debug=3
+-f file_list.txt
+-gen_obj
+-picarchive
+-sverilog
+-y
+/usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/bin/vcs1
+line
+file_list.txt
+tb
+tb/tb_uart_layered.sv
+/usr/synopsys/vcs/vcs/T-2022.06-SP2-2//packages/sva/
+65
+ZOIXHOME=/usr/synopsys/zoix/T-2022.06-SP2-2/
+XSESSION_EXEC=xfce4-session
+XDG_SESSION_ID=360
+XDG_RUNTIME_DIR=/run/user/1016
+XDG_DATA_DIRS=/home/brooke/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+XAUTHORITY=/home/brooke/.Xauthority
+X2GO_SESSION=brooke-52-1694034601_stDXFCE_dp32
+X2GO_AGENT_PID=162551
+VTE_VERSION=5204
+VSCODE_GIT_IPC_HANDLE=/run/user/1016/vscode-git-9421272673.sock
+VSCODE_GIT_ASKPASS_NODE=/usr/share/code/code
+VSCODE_GIT_ASKPASS_MAIN=/usr/share/code/resources/app/extensions/git/dist/askpass-main.js
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=--ms-enable-electron-run-as-node
+VMR_MODE_FLAG=32
+VC_STATIC_HOME=/usr/synopsys/vc_static/T-2022.06-SP2-2/
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_MX_HOME_INTERNAL=1
+VCS_HOME=/usr/synopsys/vcs/vcs/T-2022.06-SP2-2/
+VCS_EXEC_DONE=1
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux
+VCS_AMD_PURE32=1
+UNAME=/bin/uname
+TOOL_HOME=/usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux
+TERM_PROGRAM_VERSION=1.81.1
+TERM_PROGRAM=vscode
+STARTUP=/usr/bin/env LD_LIBRARY_PATH= xfce4-session
+SSH_CONNECTION=10.201.192.223 53539 10.24.60.180 22
+SSH_CLIENT=10.201.192.223 53539 22
+SSH_AUTH_SOCK=/tmp/ssh-gVtii9hIsJKv/agent.162949
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SSH_AGENT_PID=163088
+SNPS_VCS_CLANG_PATH=/usr/synopsys/vcs/vcs/T-2022.06-SP2-2//linux/clang
+SNPS_INTERNAL_VCS_LINUX_OS=linux
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/162949,unix/unix:/tmp/.ICE-unix/162949
+SELINUX_USE_CURRENT_RANGE=
+SELINUX_ROLE_REQUESTED=
+SELINUX_LEVEL_REQUESTED=
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QT_GRAPHICSSYSTEM_CHECKED=1
+QT_GRAPHICSSYSTEM=native
+QTLIB=/usr/lib64/qt-3.3/lib
+QTINC=/usr/lib64/qt-3.3/include
+QTDIR=/usr/lib64/qt-3.3
+PULSE_CLIENTCONFIG=/home/brooke/.x2go/C-brooke-52-1694034601_stDXFCE_dp32/.pulse-client.conf
+OVA_UUM=0
+OS_LDFLAGS= -m32  -m32 
+ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+NO_AT_BRIDGE=1
+MFLAGS=
+MAKELEVEL=1
+MAKEFLAGS=
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+IMSETTINGS_MODULE=none
+IMSETTINGS_INTEGRATE_DESKTOP=yes
+HISTCONTROL=ignoredups
+GPG_AGENT_INFO=/home/brooke/.gnupg/S.gpg-agent:163109:1
+GIT_ASKPASS=/usr/share/code/resources/app/extensions/git/dist/askpass.sh
+GDK_BACKEND=x11
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-p64uzNTLrY,guid=249f8d7ef71c81dab045049864f8eab5
+COLORTERM=truecolor
+CHROME_DESKTOP=code-url-handler.desktop
+0
+1
+0 /usr/synopsys/vcs/vcs/T-2022.06-SP2-2//packages/sva/
+9
+1694036463 tb/tb_uart_layered.sv
+1694036463 tb
+1694036463 src/uart.v
+1694036463 src/transmitter.v
+1694036463 src/receiver.v
+1694036463 src/baud_rate_gen.v
+1678862757 /usr/synopsys/vcs/vcs/T-2022.06-SP2-2//include/cm_vcsd.tab
+1694036463 file_list.txt
+1678862783 /usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/vcsdp.tab
+4
+1678865648 /usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/libvirsim.so
+1678863927 /usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/liberrorinf.so
+1678863738 /usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/libsnpsmalloc.so
+1678865192 /usr/synopsys/vcs/vcs/T-2022.06-SP2-2/linux/lib/libvfs.so
+1694042051 simv.daidir
+-1 partitionlib

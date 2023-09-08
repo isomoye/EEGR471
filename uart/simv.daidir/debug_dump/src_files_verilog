@@ -1,0 +1,5 @@
+/home/brooke/EEGR471/uart/src/baud_rate_gen.v
+/home/brooke/EEGR471/uart/src/receiver.v
+/home/brooke/EEGR471/uart/src/transmitter.v
+/home/brooke/EEGR471/uart/src/uart.v
+/home/brooke/EEGR471/uart/tb/tb_uart_layered.sv
