@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE cov SYSTEM "ucdb_srcinfo.dtd">
+  <srcinfo name="/home/isomoye/projects/EEGR471/uart"  >
+    <ucapi_version  major_ver="13"  minor_ver="1"  patch_str="T-2022.06-SP2-2"  />
+      <fileinfo name="src/baud_rate_gen.v"  id="0"  timestamp="1693851292"  />
+      <fileinfo name="src/receiver.v"  id="1"  timestamp="1693851292"  />
+      <fileinfo name="src/transmitter.v"  id="2"  timestamp="1693851292"  />
+      <fileinfo name="src/uart.v"  id="3"  timestamp="1693851292"  />
+      <fileinfo name="tb/tb_uart_layered.sv"  id="4"  timestamp="1693851292"  />
+    </srcinfo>

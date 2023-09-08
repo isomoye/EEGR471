@@ -1,0 +1,16 @@
+rc file Version 1.0
+
+[Design]
+COMPILE_PATH=/home/isomoye/projects/EEGR471/uart
+VCS_HOME=/usr/synopsys/vcs/vcs/T-2022.06-SP2-2/
+VERDI_HOME=
+SystemC=FALSE
+UUM=FALSE
+KDB=FALSE
+USE_NOVAS_HOME=FALSE
+COSIM=FALSE
+TOP=tb_uart_layered 
+
+[Value]
+WREALX=ffff534e50535f58
+WREALZ=ffff534e50535f5a

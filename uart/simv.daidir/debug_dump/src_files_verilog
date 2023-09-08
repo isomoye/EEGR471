@@ -1,0 +1,5 @@
+/home/isomoye/projects/EEGR471/uart/src/baud_rate_gen.v
+/home/isomoye/projects/EEGR471/uart/src/receiver.v
+/home/isomoye/projects/EEGR471/uart/src/transmitter.v
+/home/isomoye/projects/EEGR471/uart/src/uart.v
+/home/isomoye/projects/EEGR471/uart/tb/tb_uart_layered.sv
