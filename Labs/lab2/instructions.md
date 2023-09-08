@@ -2,7 +2,7 @@
 
 Break up into groups of 2.
 
-Open up the ASMD Multiplier from Week 1 [ASMD_MULTIPLIER](../../asmd/src/asmd_multiplier_flat.v)
+Open up the ASMD Multiplier from Lab 1 [ASMD_MULTIPLIER](../../asmd/src/asmd_multiplier_flat.v)
 
 
 - Inspect the verilog code for functionality.
@@ -11,7 +11,7 @@ Open up the ASMD Multiplier from Week 1 [ASMD_MULTIPLIER](../../asmd/src/asmd_mu
 
 You can also inspect the [uart logic requirement document template](../../uart/doc/uart_tx_rx_logic_req.docx) for another example. 
 
-- Each group must create a functional logic test plan, following the [test plan template](test_plan_template.docx)
+- Each group must create a functional logic test plan, following the [test plan template](test_plan_template.docx) and place it in [docs](../../asmd/docs)
 
 see [uart test plan template](../../uart/doc/uart_tx_rx_test_plan.docx) for a clear example.
 

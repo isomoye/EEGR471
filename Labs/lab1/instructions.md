@@ -76,7 +76,7 @@ From  here you should be able to display a schematic.
 
 - open VScode. 
 - Add the course directory folder to your workspace.
-- Navigate to Week1/src
+- Navigate to [asmd/src](../../asmd/src)
 - Open [control_unit.v](../../asmd/src/control_unit.v)
 - On the Top-Right side of the screen, you'll see an option "Schematic Viewer". Select and Inspect the image.
 - Click [asmd_multiplier.v](../../asmd/src/asmd_multiplier.v)
@@ -100,7 +100,7 @@ Add the work you just did to your remote repository
 
 Push your work to your branch
 
-```git commit -a -m '[firstname_lastname week1 submission]```
+```git commit -a -m '[firstname_lastname lab1 submission]```
 
 `` git push --set-upstream origin firstname_lastname`` 
 
