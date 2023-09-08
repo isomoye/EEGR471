@@ -1,7 +1,14 @@
 # Instructions for week 1.
 
+open link to https://morganstate.cloud.com
+
+Follow the instructions on [Set Up ECE Remote Server](<Setting up X2Go for your account for Hannah .docx>)
+
+Follow the instructions below if you're using you local ubuntu VM, if not skip to follow the instructions  [Install Teros](#Install-Teros)
+
 Inside you ubuntu VM.
 
+If you're not using the VM, skip to 
 
 ## install visual studio code (VScode).
 
@@ -27,20 +34,22 @@ Inside you ubuntu VM.
 
 ```export PATH=$PATH:`pwd`/verible```
 
-## install TerosHDL
+
+## Install yowasp
+In order to get the Teros to display pretty schematics we will need something in between yosys synthesis tool and Teros to help them "talk".
+
+Make sure python and pip are installed. Then run the command.
+
+```pip install yowasp-yosys```
+
+
+## install TerosHDL <a id='Install-Teros'></a>
 
 TerosHDL is a helper extension that makes RTL design much easier. 
 
 In VScode, install TerosHDL. Follow link below
 
 [Teros Install Directions](https://terostechnology.github.io/terosHDLdoc/docs/intro)
-
-## install yowasp
-In order to get the Teros to display pretty schematics we will need something in between yosys synthesis tool and Teros to help them "talk".
-
-Make sure python and pip are installed. Then run the command.
-
-```pip install yowasp-yosys```
 
 ## Test
 From  here you should be able to display a schematic.
