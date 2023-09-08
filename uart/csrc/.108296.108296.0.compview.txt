@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1694042036.595588291, "rt":0.28, "ut":0.18, "st":0.09}}
+{"vcselab":{"timestamp_begin":1694042037.010404533, "rt":0.35, "ut":0.26, "st":0.10}}
+{"link":{"timestamp_begin":1694042037.459316497, "rt":0.18, "ut":0.10, "st":0.08}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1694042035.509604816}
+{"VCS_COMP_START_TIME": 1694042035.509604816}
+{"VCS_COMP_END_TIME": 1694042037.770671421}
+{"VCS_USER_OPTIONS": "+vc -cm line -sverilog -f file_list.txt -Wall tb tb/tb_uart_layered.sv -debug +define+ASSERT_ON+COVER_ON -y /usr/synopsys/vcs/vcs/T-2022.06-SP2-2//packages/sva/ +libext+.sv +incdir+/usr/synopsys/vcs/vcs/T-2022.06-SP2-2//packages/sva"}
+{"vcs1": {"peak_mem": 247340}}
+{"stitch_vcselab": {"peak_mem": 130592}}
