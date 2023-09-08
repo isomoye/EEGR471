@@ -2,13 +2,30 @@
 
 open link to https://morganstate.cloud.com
 
+- Select BearGeneral
+- On the Windows Machine, Click X2Go by clicking on logo ![x2go](x2go.jpeg)
+
 Follow the instructions on [Set Up ECE Remote Server](<Setting up X2Go for your account for Hannah .docx>)
 
-Follow the instructions below if you're using you local ubuntu VM, if not skip to follow the instructions  [Install Teros](#Install-Teros)
+
+The default password for the linux machine is: first 3 letters of the first name + first 3 letters of the last name + 01
+
+Example: hudson defoe
+Username: hudson
+Password: huddef01
+
+
+** ``PLEASE`` change your password as soon as you log in**
+- use the command ``passwd``
+
+
+## Local VM
+
+Follow **ONLY**  if you're using a local ubunty VM.
+
+Otherwise, skip to [Install Teros](#Install-Teros).
 
 Inside you ubuntu VM.
-
-If you're not using the VM, skip to 
 
 ## install visual studio code (VScode).
 
@@ -43,7 +60,7 @@ Make sure python and pip are installed. Then run the command.
 ```pip install yowasp-yosys```
 
 
-## install TerosHDL <a id='Install-Teros'></a>
+## Install TerosHDL <a id='Install-Teros'></a>
 
 TerosHDL is a helper extension that makes RTL design much easier. 
 
