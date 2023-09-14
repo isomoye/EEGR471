@@ -1,7 +1,7 @@
 
 module asmd_multiplier_tb;
 
-  // Parameters
+  // Parameters 
   localparam  word_length = 0;
 
   //Ports
