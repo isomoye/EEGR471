@@ -49,7 +49,7 @@ initial begin
 
 
     //check product value
-
+    $finish();
 
 end
 
