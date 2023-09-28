@@ -2,7 +2,7 @@
 module asmd_multiplier_tb;
 
   // Parameters
-  localparam  int word_length = 0;
+  localparam word_length = 0;
 
   //Ports
   wire [2*word_length-1:0] product;
@@ -10,7 +10,7 @@ module asmd_multiplier_tb;
   reg [word_length-1:0] word0;
   wire  word1;
   reg  start;
-  wire  clk;
+  reg  clk=0;
   wire  reset;
 
 //asmd multiplier design-under-test (DUT)
@@ -27,10 +27,13 @@ module asmd_multiplier_tb;
     .reset(reset)
   );
 
+
 //clock
 always #5  clk = ! clk ;
 
 initial begin
+    $dumpfile("asmd_multiplier.vcd");
+    $dumpvars(0, asmd_multiplier_tb);
     //assert reset
 
     //check product and ready value
