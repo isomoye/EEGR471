@@ -8,10 +8,10 @@ module asmd_multiplier_tb;
   wire [2*word_length-1:0] product;
   wire  ready;
   reg [word_length-1:0] word0;
-  wire  word1;
+  reg  [word_length-1:0] word1;
   reg  start;
   reg  clk=0;
-  wire  reset;
+  reg  reset;
 
 //asmd multiplier design-under-test (DUT)
   asmd_multiplier # (
@@ -34,8 +34,11 @@ always #5  clk = ! clk ;
 initial begin
     $dumpfile("asmd_multiplier.vcd");
     $dumpvars(0, asmd_multiplier_tb);
+    #100;
     //assert reset
-
+    reset = 1'b1;
+    
+    #100;
     //check product and ready value
 
 
@@ -49,6 +52,8 @@ initial begin
 
 
     //check product value
+
+    
     $finish();
 
 end
