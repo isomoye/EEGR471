@@ -2,7 +2,7 @@
 module asmd_multiplier_tb;
 
   // Parameters
-  localparam  word_length = 0;
+  localparam  int word_length = 0;
 
   //Ports
   wire [2*word_length-1:0] product;
@@ -13,6 +13,7 @@ module asmd_multiplier_tb;
   wire  clk;
   wire  reset;
 
+//asmd multiplier design-under-test (DUT)
   asmd_multiplier # (
     .word_length(word_length)
   )
@@ -26,6 +27,27 @@ module asmd_multiplier_tb;
     .reset(reset)
   );
 
-//always #5  clk = ! clk ;
+//clock
+always #5  clk = ! clk ;
+
+initial begin
+    //assert reset
+
+    //check product and ready value
+
+
+    //deassert reset
+
+    //set word0 and word1
+
+    //set start
+
+    //wait for ready
+
+
+    //check product value
+
+
+end
 
 endmodule
