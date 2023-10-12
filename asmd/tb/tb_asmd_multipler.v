@@ -12,6 +12,7 @@ module asmd_multiplier_tb;
   reg  start;
   reg  clk=0;
   reg  reset;
+  reg [2*word_length-1:0] model_product;
 
 //asmd multiplier design-under-test (DUT)
   asmd_multiplier # (
@@ -40,25 +41,39 @@ initial begin
     
     #100;
     //check product and ready value
-    if(product != 8'b0) begin
-      $error("product not zeros");
-    end
-    if(ready!= 1'b1) begin
-      $error("ready not asserted");
+    if(product != '0)begin
+      $error("product not set to 0");
     end
 
+    if(ready != 1'b0)begin
+      $error("ready not set to 0");
+    end
 
     //deassert reset
+    reset = '0;
 
     //set word0 and word1
+    word0 = word_length;
+    word1 = word_length;
+    #100
 
     //set start
-
+    start = 1'b1;
+    model_product = word0 * word1;
     //wait for ready
+    wait (ready);
 
 
     //check product value
+    if(product != word0 * word1)begin
+      $error("product not equal to 2 * word length");
+    end
 
+    if(model_product != product)begin
+      $error("model product not equal to product");
+    end
+
+    //model signals
     
     $finish();
 
