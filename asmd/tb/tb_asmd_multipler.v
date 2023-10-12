@@ -40,6 +40,12 @@ initial begin
     
     #100;
     //check product and ready value
+    if(product != 8'b0) begin
+      $error("product not zeros");
+    end
+    if(ready!= 1'b1) begin
+      $error("ready not asserted");
+    end
 
 
     //deassert reset
