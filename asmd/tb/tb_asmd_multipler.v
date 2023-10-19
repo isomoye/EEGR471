@@ -9,7 +9,7 @@ module asmd_multiplier_tb;
   wire [2*word_length-1:0] product;
   wire  ready;
   reg [word_length-1:0] word0;
-  reg [word_length-1:0] word1;
+  reg  [word_length-1:0] word1;
   reg  start;
   reg  clk=0;
   reg  reset;
@@ -36,19 +36,20 @@ always #5  clk = !clk ;
 initial begin
     $dumpfile("asmd_multiplier.vcd");
     $dumpvars(0, asmd_multiplier_tb);
-    #10  //wait 100 time units
-    
-  //assert reset
+    #100;
+    //assert reset
     reset = 1'b1;
-    #10 //wait 100 time units
     
+    #100;
     //check product and ready value
-      if(product != 8'b0)begin
-        $error("Product is not zero");
-      end
-      if(ready != 1'b0)begin
-        $error("Ready not asserted");
-      end
+    if(product != 8'b0) begin
+      $error("product not zeros");
+    end
+    if(ready!= 1'b1) begin
+      $error("ready not asserted");
+    end
+
+
     //deassert reset
     reset = 1'b0;
     
@@ -72,6 +73,8 @@ initial begin
     end
     
 
+
+    
     $finish();
 
 end
