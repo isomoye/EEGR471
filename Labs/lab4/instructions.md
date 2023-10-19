@@ -17,10 +17,8 @@ Open up the ASMD Multiplier netlist created in [ASMD_MULTIPLIER_NETLIST](../../a
 ### I.E
 ```
 //asmd multiplier netlist design-under-test (DUT)
-  asmd_multiplier_netlist # (
-    .word_length(word_length)
-  )
-  asmd_multiplier_netlist_inst (
+  asmd_multiplier_netlist 
+   asmd_multiplier_netlist_inst (
     .product(product_netlist),
     .ready(ready_netlist),
     .word0(word0_netlist),
@@ -31,6 +29,8 @@ Open up the ASMD Multiplier netlist created in [ASMD_MULTIPLIER_NETLIST](../../a
   );
 
 ```
+
+- *NOTE* : netlist does not have word_length parameter... Why not?
 
 - Verify that the RTL and Netlist have similar functionality
 
