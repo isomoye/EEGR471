@@ -29,6 +29,20 @@ module asmd_multiplier_tb;
     .reset(reset)
   );
 
+  //asmd multiplier netlist design-under-test (DUT)
+   asmd_multiplier_netlist_inst (
+    .product(product_netlist),
+    .ready(ready_netlist),
+    .word0(word0_netlist),
+    .word1(word1_netlist),
+    .start(start_netlist),
+    .clk(clk),
+    .reset(reset)
+    );
+
+   // *NOTE* : netlist does not have word_length parameter
+    //... Why not?
+    // the netlist does not contain word_length because it is not a port
 
 //clock Generation
 always #5  clk = !clk ;
@@ -72,8 +86,18 @@ initial begin
       
     end
     
+    //confirm that netlist product and rtl product output are equivalent.
+    always @(*) begin
+      if(product != product_netlist) begin
+        $error("product mismatch\n");
+      end
+    end
 
-
+    always @(*)begin
+      if(ready != ready_netlist) begin
+        $error("ready mismatch\n")
+      end
+    end
     
     $finish();
 
