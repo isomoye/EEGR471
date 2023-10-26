@@ -94,6 +94,12 @@ initial begin
       end
   end
 
+    always@(*) begin
+      if(ready != ready_netlist) begin
+        $error("ready mismatch\n");
+      end
+    end
+
     //model signals
 
     
