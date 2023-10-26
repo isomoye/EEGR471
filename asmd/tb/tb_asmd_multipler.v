@@ -6,9 +6,13 @@ module asmd_multiplier_tb;
 
   //Ports
   wire [2*word_length-1:0] product;
+  wire [2*word_length-1:0] product_netlist;
   wire  ready;
+  wire  ready_netlist;
   reg [word_length-1:0] word0;
+  reg [word_length-1:0] word0_netlist;
   reg  [word_length-1:0] word1;
+  reg  [word_length-1:0] word1_netlist;
   reg  start;
   reg  clk=0;
   reg  reset;
@@ -28,6 +32,17 @@ module asmd_multiplier_tb;
     .reset(reset)
   );
 
+  //asmd multiplier netlist design-under-test (DUT)
+  asmd_multiplier_netlist 
+   asmd_multiplier_netlist_inst (
+    .product(product_netlist),
+    .ready(ready_netlist),
+    .word0(word0_netlist),
+    .word1(word1_netlist),
+    .start(start),
+    .clk(clk),
+    .reset(reset)
+  );
 
 //clock
 always #5  clk = ! clk ;
@@ -73,7 +88,14 @@ initial begin
       $error("model product not equal to product");
     end
 
+    always @(*) begin
+      if(product != product_netlist) begin
+          $error("product mismatch\n");
+      end
+  end
+
     //model signals
+
     
     $finish();
 
