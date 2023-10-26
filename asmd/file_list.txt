@@ -1,5 +1,5 @@
 netlist/cmos_cells.v
-netlist/asmd_multplier_netlist.v
+netlist/asmd_multiplier_netlist.v
 src/datapath_unit.v 
 src/control_unit.v 
 src/asmd_multiplier.v
