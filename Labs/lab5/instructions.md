@@ -52,5 +52,5 @@ Navigate to top project directory
 
 Use *FAULT* to add DFT scan chain to the ASMD design
 
-```fault tap -l yosys/examples/cmos/cmos_cells.lib -c yosys/examples/cmos/cmos_cells.v --clock clk --reset reset EEGR471/asmd/netlist/asmd_multiplier_netlist.v```
+```fault chain -l yosys/examples/cmos/cmos_cells.lib -c yosys/examples/cmos/cmos_cells.v --clock clk --reset reset EEGR471/asmd/netlist/asmd_multiplier_netlist.v```
 
