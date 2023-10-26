@@ -47,3 +47,12 @@ Read in the alias you just added:
 Test the install 
 
 ``` fault -V```
+
+Navigate to top project directory
+
+```cd ~/projects```
+
+Use *FAULT* to add DFT scan chain to the ASMD design
+
+```fault tap -l yosys/examples/cmos/cmos_cells.lib -c yosys/examples/cmos/cmos_cells.v --clock clk --reset reset EEGR471/asmd/netlist/asmd_multiplier_netlist.v```
+
