@@ -18,8 +18,6 @@ AND
 
 ```git clone https://github.com/YosysHQ/yosys.git```
 
-Navigate to the  in the [ASMD_MULTIPLIER](../../asmd/src/) ```cd ~/projects/asmd```
-
 Pull the tool docker image
 
 ```docker pull ghcr.io/aucohl/fault:latest```
