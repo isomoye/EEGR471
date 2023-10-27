@@ -56,6 +56,9 @@ always @(*) begin
   if(product != product_netlist) begin
       $error("product mismatch\n");
   end
+  if(ready != ready_netlist)begin
+    $error("ready mismatch\n");
+  end
 end
 
 initial begin
@@ -87,9 +90,10 @@ initial begin
 
     //set start
     start = 1'b1;
-    model_product = word0 * word1;
+
+    model_product = (word0 * word1);
         //wait for ready
-    wait (!ready);
+    //wait (!ready);
 
     //wait for ready
     wait (ready);
