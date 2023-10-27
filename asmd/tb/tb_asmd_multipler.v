@@ -1,20 +1,24 @@
-//Engineers : Omer Olloumou, Brooke Price, Ifeanyichukwo Iwobi
 
 module asmd_multiplier_tb;
 
   // Parameters
-  localparam word_length = 4 ;
+  localparam word_length = 4;
 
   //Ports
-  wire [2*word_length-1:0] product;
+  wire [2*word_length-1:0] product;  
+  wire [2*word_length-1:0] product_netlist;
   wire  ready;
+  wire  ready_netlist;
   reg [word_length-1:0] word0;
   reg  [word_length-1:0] word1;
+
+  reg [word_length-1:0] word0_netlist;
+  reg  [word_length-1:0] word1_netlist;
   reg  start;
   reg  clk=0;
   reg  reset;
+  reg [2*word_length-1:0] model_product;
 
-  reg [2*word_length-1:0]  model_product;
 //asmd multiplier design-under-test (DUT)
   asmd_multiplier # (
     .word_length(word_length)
@@ -29,76 +33,79 @@ module asmd_multiplier_tb;
     .reset(reset)
   );
 
+
   //asmd multiplier netlist design-under-test (DUT)
+  asmd_multiplier_netlist 
    asmd_multiplier_netlist_inst (
     .product(product_netlist),
     .ready(ready_netlist),
-    .word0(word0_netlist),
-    .word1(word1_netlist),
-    .start(start_netlist),
+    .word0(word0),
+    .word1(word1),
+    .start(start),
     .clk(clk),
     .reset(reset)
-    );
+  );
 
-   // *NOTE* : netlist does not have word_length parameter
-    //... Why not?
-    // the netlist does not contain word_length because it is not a port
 
-//clock Generation
-always #5  clk = !clk ;
+//clock
+always #5  clk = ! clk ;
+
+
+//confirm that netlist product and rtl product output are equivalent.
+always @(*) begin
+  if(product != product_netlist) begin
+      $error("product mismatch\n");
+  end
+end
 
 initial begin
     $dumpfile("asmd_multiplier.vcd");
     $dumpvars(0, asmd_multiplier_tb);
+
+    start = 1'b0;
     #100;
     //assert reset
     reset = 1'b1;
     
     #100;
     //check product and ready value
-    if(product != 8'b0) begin
-      $error("product not zeros");
-    end
-    if(ready!= 1'b1) begin
-      $error("ready not asserted");
+    if(product != '0)begin
+      $error("product not set to 0");
     end
 
+    if(ready != 1'b0)begin
+      $error("ready not set to 0");
+    end
 
     //deassert reset
-    reset = 1'b0;
-    
+    reset = '0;
+
     //set word0 and word1
-    word0 = 4'b0100; //4
-    word1 = 4'b0101; //5
-    
+    word0 = 4'h5;
+    word1 = 4'h3;
+    #100
+
     //set start
     start = 1'b1;
-    
-    model_product = word0*word1;
-    
-    
+    model_product = word0 * word1;
+        //wait for ready
+    wait (!ready);
+
     //wait for ready
-    wait(ready);
+    wait (ready);
+
 
     //check product value
-    if(product != model_product)begin
-      $error("conent of  model_product is %d", model_product); 
-      
-    end
-    
-    //confirm that netlist product and rtl product output are equivalent.
-    always @(*) begin
-      if(product != product_netlist) begin
-        $error("product mismatch\n");
-      end
+    if(product != word0 * word1)begin
+      $error("product not equal to 2 * word length");
     end
 
-    always @(*)begin
-      if(ready != ready_netlist) begin
-        $error("ready mismatch\n")
-      end
+    if(model_product != product)begin
+      $error("model product not equal to product");
     end
-    
+
+    //model signals
+    #100;
     $finish();
 
 end
