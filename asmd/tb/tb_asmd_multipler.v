@@ -1,4 +1,4 @@
-
+//Engineers involved : Omer Olloumou, Brooke Price, Ife
 module asmd_multiplier_tb;
 
   // Parameters
@@ -69,7 +69,7 @@ initial begin
     
     #100;
     //check product and ready value
-    if(product != '0)begin
+    if(product != 8'b0)begin
       $error("product not set to 0");
     end
 
@@ -78,11 +78,11 @@ initial begin
     end
 
     //deassert reset
-    reset = '0;
+    reset = 1'b0;
 
     //set word0 and word1
-    word0 = 4'h5;
-    word1 = 4'h3;
+    word0 = 4'b0100;
+    word1 = 4'b0101;
     #100
 
     //set start
