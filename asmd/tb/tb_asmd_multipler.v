@@ -41,9 +41,9 @@ module asmd_multiplier_tb;
    asmd_multiplier_netlist_inst (
     .product(product_netlist),
     .ready(ready_netlist),
-    .word0(word0),
-    .word1(word1),
-    .start(start),
+    .word0(word0_netlist),
+    .word1(word1_netlist),
+    .start(start_netlist),
     .clk(clk),
     .reset(reset)
   );
@@ -109,7 +109,7 @@ initial begin
     end
 
     
-    //#100;
+    #100;
     $finish();
 
 end
