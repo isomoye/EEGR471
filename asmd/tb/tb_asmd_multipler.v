@@ -16,6 +16,7 @@ module asmd_multiplier_tb;
 
   //additional port to link the netlist
   wire ready_netlist;
+  reg  start_netlist;
   wire [2*word_length-1:0] product_netlist;
   reg  [word_length-1:0] word0_netlist;
   reg  [word_length-1:0] word1_netlist;
@@ -48,6 +49,8 @@ module asmd_multiplier_tb;
     .reset(reset)
   );
 
+  // Netlist does not have word_length parameter
+  // 
 
 //clock
 always #5  clk = ! clk ;
@@ -101,10 +104,10 @@ initial begin
     //confirm that netlist product and rtl product output are equivalent.
     always @(*) begin
       if(product != product_netlist) begin
-          $error("product mismatch");
+          $error("Netlist/RTL product mismatch");
       end
       if(ready != ready_netlist)begin
-        $error("ready mismatch");
+        $error("Netlist/RTL ready mismatch");
       end
     end
 
