@@ -88,8 +88,8 @@ initial begin
     reset = 1'b0;
 
     //set word0 and word1
-    word0 = 4'h4;
-    word1 = 4'h5;
+    word0 = 4'b0100;
+    word1 = 4'b0101;
     #100
 
     //set start
