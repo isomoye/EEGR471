@@ -104,10 +104,10 @@ initial begin
     //confirm that netlist product and rtl product output are equivalent.
     always @(*) begin
       if(product != product_netlist) begin
-          $error("Netlist/RTL product mismatch");
+          $error("Netlist / RTL product mismatch");
       end
       if(ready != ready_netlist)begin
-        $error("Netlist/RTL ready mismatch");
+        $error("Netlist / RTL ready mismatch");
       end
     end
 
