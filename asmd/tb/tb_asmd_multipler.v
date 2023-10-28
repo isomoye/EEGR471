@@ -16,10 +16,7 @@ module asmd_multiplier_tb;
 
   //additional port to link the netlist
   wire ready_netlist;
-  reg  start_netlist;
   wire [2*word_length-1:0] product_netlist;
-  reg  [word_length-1:0] word0_netlist;
-  reg  [word_length-1:0] word1_netlist;
   
 
 //asmd multiplier design-under-test (DUT)
@@ -61,7 +58,7 @@ always @(*) begin
       $error("Netlist / RTL product mismatch");
   end
   if(ready != ready_netlist)begin
-    $error("Netlist / RTL ready mismatch");
+      $error("Netlist / RTL ready mismatch");
   end
 end
 
