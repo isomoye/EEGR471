@@ -55,12 +55,21 @@ module asmd_multiplier_tb;
 //clock
 always #5  clk = ! clk ;
 
+//confirm that netlist product and rtl product output are equivalent.
+always @(*) begin
+  if(product != product_netlist) begin
+      $error("Netlist / RTL product mismatch");
+  end
+  if(ready != ready_netlist)begin
+    $error("Netlist / RTL ready mismatch");
+  end
+end
 
 initial begin
     $dumpfile("asmd_multiplier.vcd");
     $dumpvars(0, asmd_multiplier_tb);
 
-    //start = 1'b0;
+    start = 1'b0;
     #100;
     //assert reset
     reset = 1'b1;
@@ -79,8 +88,8 @@ initial begin
     reset = 1'b0;
 
     //set word0 and word1
-    word0 = 4'b0100;
-    word1 = 4'b0101;
+    word0 = 4'h4;
+    word1 = 4'h5;
     #100
 
     //set start
@@ -90,7 +99,7 @@ initial begin
     model_product = (word0 * word1);
 
     //wait for !ready
-    //wait (!ready);
+    wait (!ready);
 
     //wait for ready
     wait (ready);
@@ -99,16 +108,6 @@ initial begin
     //check product value
     if(model_product != product)begin
       $error("model product not equal to product");
-    end
-
-    //confirm that netlist product and rtl product output are equivalent.
-    always @(*) begin
-      if(product != product_netlist) begin
-          $error("Netlist / RTL product mismatch");
-      end
-      if(ready != ready_netlist)begin
-        $error("Netlist / RTL ready mismatch");
-      end
     end
 
     
