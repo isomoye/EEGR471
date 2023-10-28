@@ -46,10 +46,10 @@ module asmd_multiplier_tb;
     .reset(reset)
   );
 
-  // Netlist does not have word_length parameter
-  // 
+  // *NOTE* : netlist does not have word_length parameter... Why not?
+  // The netlist does not contain word_length because it is not a port
 
-//clock
+//clock Generation
 always #5  clk = ! clk ;
 
 //confirm that netlist product and rtl product output are equivalent.
@@ -66,7 +66,7 @@ initial begin
     $dumpfile("asmd_multiplier.vcd");
     $dumpvars(0, asmd_multiplier_tb);
 
-    start = 1'b0;
+    //start = 1'b0;
     #100;
     //assert reset
     reset = 1'b1;
@@ -85,18 +85,18 @@ initial begin
     reset = 1'b0;
 
     //set word0 and word1
-    word0 = 4'b0100;
-    word1 = 4'b0101;
+    word0 = 4'b0100; //4
+    word1 = 4'b0101; //5
     #100
 
     //set start
     start = 1'b1;
 
     //model signals
-    model_product = (word0 * word1);
+    model_product = (word0*word1);
 
     //wait for !ready
-    wait (!ready);
+    //wait (!ready);
 
     //wait for ready
     wait (ready);
@@ -105,6 +105,7 @@ initial begin
     //check product value
     if(model_product != product)begin
       $error("model product not equal to product");
+      $error("content of model_product is %d",model_product);
     end
 
     
