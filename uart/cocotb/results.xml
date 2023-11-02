@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1678083924" />
+    <testcase name="test_uartrx" classname="uart_tb" file="/home/idris/projects/EEGR417/eegr_417/cocotb/uart_tb.py" lineno="16" time="4.57330584526062" sim_time_ns="950560.001" ratio_time="207849.64600280963" />
+  </testsuite>
+</testsuites>
