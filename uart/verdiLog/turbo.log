@@ -1,3 +1,0 @@
-Command Line: /usr/synopsys/vc_static/T-2022.06-SP2-2/verdi/platform/LINUXAMD64/bin/Novas -i -simflow -simBin simv -simOpt  
-uname(Linux hannah 3.10.0-1160.88.1.el7.x86_64 #1 SMP Tue Mar 7 15:41:52 UTC 2023 x86_64)
-au time 1.166443 0.942591 0.069144 delta 340717568 340717568 total 906043392 906043392
