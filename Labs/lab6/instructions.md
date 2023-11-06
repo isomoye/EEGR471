@@ -14,4 +14,17 @@ Use *FAULT* to generate ATPG vectors
 
 Simulate vectors with scan-chain netlist in lab 5.
 
+Set test_jtag.sh as executable
+```chmod +x test_jtag.sh```
+
+run test_jtag.sh
+```source test_jtag.sh```
+
+A vcd will now be present in the projects directory.
+
+open the VCD file with gtkwave and analyze.
+
+Submit the value of test data out "tdo" at time increment 31. i.e "i" = 31.
+
+
 

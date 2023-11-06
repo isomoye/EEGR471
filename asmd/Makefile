@@ -10,7 +10,7 @@ testbench:
 	iverilog -c file_list.txt -Wall tb/tb_asmd_multipler.v -o $@ 
 
 tb_layered:
-	iverilog -Wall -g2012  -c file_list.txt -Wall tb tb/tb_asmd_multiplier_layered.sv -o $@
+	iverilog -Wall -g2012  -c file_list.txt -Wall tb tb/tb_asmd_multiplier.v -o $@
 
 tb_class:clean_vcs
 	vcs +vc -cm line -sverilog -f file_list.txt -f class_list.txt -debug \
@@ -21,14 +21,14 @@ tb_class:clean_vcs
 	./simv -cm line +NUM+5
 
 sim_vcs: clean_vcs
-	vcs +vc -cm line -sverilog -f file_list.txt -Wall tb tb/tb_asmd_multiplier_layered.sv -debug \
+	vcs +vc -cm line -sverilog -f file_list.txt -Wall tb tb/tb_asmd_multiplier.v -debug \
 		+define+ASSERT_ON+COVER_ON \
 		-y $(VCS_HOME)/packages/sva/ \
 		+libext+.sv \
 		+incdir+$(VCS_HOME)/packages/sva 
 	./simv -cm line +NUM+5
 	#assertCovReport
-	#vcs -cov_text_report tb_asmd_multiplier_layered.db
+	#vcs -cov_text_report tb_asmd_multiplier.db
 
 
 sim: clean testbench
