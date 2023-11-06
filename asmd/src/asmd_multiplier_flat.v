@@ -22,7 +22,7 @@ module control_unit(output reg flush, shift, addshift, load_words, ready,
        reg state, next_state;
        parameter s_idle = 0, s_running = 1;
 
-       always@(posedge clk, posedge reset)
+       always@(posedge clk or posedge reset)
         if(reset == 1'b1)
             state <= s_idle;
         else
@@ -38,8 +38,7 @@ module control_unit(output reg flush, shift, addshift, load_words, ready,
         ready = 0;
         case(state)
             s_idle: begin
-                if (reset == 1'b1) next_state = s_idle;
-                else begin
+                begin
                     ready = 1;
                     if (start == 1'b1) begin
                         if (empty == 1'b1) begin
@@ -90,7 +89,7 @@ module datapath_unit    #(parameter word_length=4)(
     assign m_is_1 = (multiplier == 1);
     assign empty = ((word0 == 0) || (word1 == 0));
 
-    always@(posedge clk, posedge reset)
+    always@(posedge clk)
         if (reset == 1'b1) begin
             product <= 0;
             multiplier <= 0;
