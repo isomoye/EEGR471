@@ -58,6 +58,12 @@ always @(*) begin
   end
 end
 
+always @(*) begin
+  if(ready!= ready_netlist_netlist) begin
+      $error("product mismatch\n");
+  end
+end
+
 initial begin
     $dumpfile("asmd_multiplier.vcd");
     $dumpvars(0, asmd_multiplier_tb);
