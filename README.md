@@ -59,7 +59,30 @@ Navigate to [lab2](Labs/lab2) and then to [instructions.md](Labs/lab2/instructio
 
 Open and follow instructions
 
-Week 2 assignment is due ``Sunday September 10th``.
+Week 2 assignment is due ``Sunday September 17th``.
 
 
+## Lab 3
+
+Navigate to [lab3](Labs/lab3) and then to [instructions.md](Labs/lab3/instructions.md)
+
+Open and follow instructions
+
+Week 2 assignment is due ``Sunday September 23th``.
+
+## Lab 4
+
+Navigate to [lab4](Labs/lab4) and then to [instructions.md](Labs/lab4/instructions.md)
+
+Open and follow instructions
+
+Week 2 assignment is due ``Sunday October 21th``.
+
+## Lab 5
+
+Navigate to [lab5](Labs/lab5) and then to [instructions.md](Labs/lab5/instructions.md)
+
+Open and follow instructions
+
+Week 2 assignment is due ``Sunday October 29th``.
 

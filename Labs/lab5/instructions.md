@@ -14,7 +14,13 @@ Download a copy of the tool:
 
 ```git clone https://github.com/AUCOHL/Fault.git```
 
+<<<<<<< HEAD
 Navigate to the  in the [ASMD_MULTIPLIER](../../asmd/src/) ```cd ~/projects/asmd```
+=======
+AND
+
+```git clone https://github.com/YosysHQ/yosys.git```
+>>>>>>> bd4f4808e1f57c405b265a591baa4151eaee4f28
 
 Pull the tool docker image
 
@@ -44,6 +50,7 @@ Test the install
 
 ``` fault -V```
 
+<<<<<<< HEAD
 
 
 Open up the ASMD Multiplier netlist created in [ASMD_MULTIPLIER_NETLIST](../../asmd/netlist/asmd_multplier_netlist.v)
@@ -85,4 +92,13 @@ end
 ```
 
 - Do this for all other outputs
+=======
+Navigate to top project directory
+
+```cd ~/projects```
+
+Use *FAULT* to add DFT scan chain to the ASMD design
+
+```fault chain -l yosys/examples/cmos/cmos_cells.lib -c yosys/examples/cmos/cmos_cells.v --clock clk --reset reset EEGR471/asmd/netlist/asmd_multiplier_netlist.v```
+>>>>>>> bd4f4808e1f57c405b265a591baa4151eaee4f28
 
