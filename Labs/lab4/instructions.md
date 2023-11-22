@@ -21,9 +21,9 @@ Open up the ASMD Multiplier netlist created in [ASMD_MULTIPLIER_NETLIST](../../a
    asmd_multiplier_netlist_inst (
     .product(product_netlist),
     .ready(ready_netlist),
-    .word0(word0_netlist),
-    .word1(word1_netlist),
-    .start(start_netlist),
+    .word0(word0),
+    .word1(word1),
+    .start(start),
     .clk(clk),
     .reset(reset)
   );
