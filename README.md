@@ -43,23 +43,46 @@ You must then create a branch so that you can submit your assignments.
 
 ``git checkout -b [firstname_lastname]``
 
-# Week By Week
+# Labs
 
-for each week there will be a folder in named week[x], for Week 1 it is [week1](week1).
+for each lab there will be a folder in named lab[x], for Lab 1 it is [lab1](Labs/lab1).
 
-In that folder there will be a docs folder [docs](week1/docs) which will contain [```instructions.md```](week1/docs/instructions.md). 
+In that folder there will be file [instructions.md](Labs/lab2/instructions.md)
 
 Open and follow instructions.
 
 Week 1 assignment is due ``Thursday September 7th``.
 
-## Week 2
+## Lab 2
 
-Navigate to [Week2](week2) and then to [Week2 Instructions](week2/instructions.md)
+Navigate to [lab2](Labs/lab2) and then to [instructions.md](Labs/lab2/instructions.md)
 
 Open and follow instructions
 
-Week 2 assignment is due ``Sunday September 10th``.
+Week 2 assignment is due ``Sunday September 17th``.
 
 
+## Lab 3
+
+Navigate to [lab3](Labs/lab3) and then to [instructions.md](Labs/lab3/instructions.md)
+
+Open and follow instructions
+
+Week 2 assignment is due ``Sunday September 23th``.
+
+## Lab 4
+
+Navigate to [lab4](Labs/lab4) and then to [instructions.md](Labs/lab4/instructions.md)
+
+Open and follow instructions
+
+Week 2 assignment is due ``Sunday October 21th``.
+
+## Lab 5
+
+Navigate to [lab5](Labs/lab5) and then to [instructions.md](Labs/lab5/instructions.md)
+
+Open and follow instructions
+
+Week 2 assignment is due ``Sunday October 29th``.
 
