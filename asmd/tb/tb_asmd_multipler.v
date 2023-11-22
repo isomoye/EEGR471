@@ -37,16 +37,14 @@ asmd_multiplier_inst (
 );
 
 
-
-
 //asmd multiplier netlist design-under-test (DUT)
 asmd_multiplier_netlist
  asmd_multiplier_netlist_inst (
   .product(product_netlist),
   .ready(ready_netlist),
-  .word0(word0_netlist),
-  .word1(word1_netlist),
-  .start(start_netlist),
+  .word0(word0),
+  .word1(word1),
+  .start(start),
   .clk(clk),
   .reset(reset)
 );
