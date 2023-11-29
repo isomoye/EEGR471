@@ -1,0 +1,16 @@
+Generating LALR tables
+WARNING: 183 shift/reduce conflicts
+Chaining internal flip-flops…
+Internal scan chain successfuly constructed. Length:  21
+Creating and chaining boundary flip-flops…
+Generating LALR tables
+WARNING: 183 shift/reduce conflicts
+Boundary scan cells successfuly chained. Length:  18
+Total scan-chain length:  39
+Resynthesizing with yosys…
+Verifying scan chain integrity…
+Generating LALR tables
+WARNING: 183 shift/reduce conflicts
+done
+Scan chain verified successfully.
+Done.
