@@ -8,7 +8,7 @@ Working in the same 2 person group as lab .
 
 Open up the ASMD Multiplier from Lab 1 [ASMD_MULTIPLIER](../../asmd/src/asmd_multiplier_flat.v)
 
-Open up the ASMD Multiplier netlist created in [ASMD_MULTIPLIER_NETLIST](../../asmd/netlist/asmd_multplier_netlist.v)
+Open up the ASMD Multiplier netlist created in [ASMD_MULTIPLIER_NETLIST](../../asmd/netlist/asmd_multpilier_netlist.v)
 
 - Inspect the verilog code for functionality.
 
@@ -21,9 +21,9 @@ Open up the ASMD Multiplier netlist created in [ASMD_MULTIPLIER_NETLIST](../../a
    asmd_multiplier_netlist_inst (
     .product(product_netlist),
     .ready(ready_netlist),
-    .word0(word0_netlist),
-    .word1(word1_netlist),
-    .start(start_netlist),
+    .word0(word0),
+    .word1(word1),
+    .start(start),
     .clk(clk),
     .reset(reset)
   );
