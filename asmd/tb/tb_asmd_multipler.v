@@ -8,9 +8,13 @@ localparam word_length = 4;
 
   //Ports
   wire [2*word_length-1:0] product;
+  wire [2*word_length-1:0] product_netlist;
   wire  ready;
+  wire  ready_netlist;
   reg [word_length-1:0] word0;
+  reg [word_length-1:0] word0_netlist;
   reg  [word_length-1:0] word1;
+  reg  [word_length-1:0] word1_netlist;
   reg  start;
   reg  clk=0;
   reg  reset;
@@ -30,6 +34,17 @@ asmd_multiplier_inst (
   .reset(reset)
 );
 
+  //asmd multiplier netlist design-under-test (DUT)
+  asmd_multiplier_netlist 
+   asmd_multiplier_netlist_inst (
+    .product(product_netlist),
+    .ready(ready_netlist),
+    .word0(word0_netlist),
+    .word1(word1_netlist),
+    .start(start),
+    .clk(clk),
+    .reset(reset)
+  );
 
 
 
@@ -92,6 +107,27 @@ initial begin
 
 
     //check product value
+    if(product != word0 * word1)begin
+      $error("product not equal to 2 * word length");
+    end
+
+    if(model_product != product)begin
+      $error("model product not equal to product");
+    end
+
+    always @(*) begin
+      if(product != product_netlist) begin
+          $error("product mismatch\n");
+      end
+  end
+
+    always@(*) begin
+      if(ready != ready_netlist) begin
+        $error("ready mismatch\n");
+      end
+    end
+
+    //model signals
 
     
     $finish();
