@@ -26,5 +26,5 @@ open the VCD file with gtkwave and analyze.
 
 Submit the value of test data out "tdo" at time increment 31. i.e "i" = 31.
 
-
+tdo = 1, at i =31
 
