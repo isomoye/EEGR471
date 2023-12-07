@@ -8,7 +8,7 @@ Working in the same 2 person group as lab 4.
 
 First: 
 
-Ensure that you are in the top projects directory i.e ```cd ~/projects```
+Ensure that you are in the lab6 directory i.e ```cd Labs/lab6```
 
 Use *FAULT* to generate ATPG vectors
 
