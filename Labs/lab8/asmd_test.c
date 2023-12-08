@@ -239,8 +239,8 @@ void main()
         //TODO: set words to something other than zero.. but keep in mind that
         //we can only print one char right now... so product of the two must be 
         //less than 16
-        word0_value = 0x0;
-        word1_value = 0x0;
+        word0_value = 0x02;
+        word1_value = 0x06;
 
         //set the words into the multiplier
         reg_la1_data |= ((word1_value & 0x0F) << IN_WORD1);
@@ -254,6 +254,7 @@ void main()
         // set start
         //TODO: set the start bit using the IN_START define
         //hint: see how reset was done on line 217 for an example
+        reg_la1_data |= 1 << IN_START;
 
         reg_la1_data |= 1 << IN_CLK;
         reg_la1_data &= (~(1 << IN_CLK));
@@ -270,7 +271,7 @@ void main()
         
         //deassert start
         //TODO: set start to zero. see how reset was done on line 233 for an example
-        
+        reg_la1_data |= ((~1 << IN_START));
         reg_la1_data |= 1 << IN_CLK;
         reg_la1_data &= (~(1 << IN_CLK));
 
@@ -297,7 +298,7 @@ void main()
 
 
         //TODO: check that model product is not equal to data_out
-        if ("TODO: CHECK ME!!")
+        if (model_product != data_out)
         {
             print("model product not equal to product\n");
             print("content of model_product is: \n");
