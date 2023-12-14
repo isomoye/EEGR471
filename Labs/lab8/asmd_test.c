@@ -253,7 +253,6 @@ void main()
 
         // set start
         //TODO: set the start bit using the IN_START define
-        //hint: see how reset was done on line 217 for an example
         reg_la1_data |= 1 << IN_START;
 
         reg_la1_data |= 1 << IN_CLK;
