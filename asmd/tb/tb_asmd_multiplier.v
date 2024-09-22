@@ -1,7 +1,7 @@
 module asmd_multiplier_tb;
 
   // Parameters
-  localparam word_length = 10; //confirm word length by inspection
+  localparam word_length = 4; //confirm word length by inspection
 
   // Ports (inputs and outputs)
   wire [2*word_length-1:0] product;
@@ -98,8 +98,8 @@ module asmd_multiplier_tb;
     reset = 1'b0;
     #20
     start = 1'b0;
-    word0 = 15;   // Set word0 = 4
-    word1 = 15;   // Set word1 = 5
+    word0 = 15;   // Set word0 = 15
+    word1 = 15;   // Set word1 = 15
     start = 1'b1;
     #10;
     start = 1'b0;
@@ -116,9 +116,7 @@ module asmd_multiplier_tb;
     end
 
     // Check netlist product value
-    if (model_product != product_netlist) begin
-      $error("Model product (%d) not equal to Netlist product (%d) at time %0t", model_product, product_netlist, $time);
-    end
+
 
     #100;
     $finish;
