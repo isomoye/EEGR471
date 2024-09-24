@@ -1,0 +1,8 @@
+asmd_multiplier_tb
+clk
+word0
+word1
+ready
+reset
+start
+product
