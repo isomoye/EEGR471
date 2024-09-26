@@ -38,7 +38,7 @@ asmd_multiplier_inst (
 
 
 //clock Generation
-always #5  clk = ! clk ;
+always #100  clk = ! clk ;
 
 initial begin
   $dumpfile("asmd_multiplier.vcd");
