@@ -59,15 +59,31 @@ initial begin
 for (i = 0; i < num_iterations; i = i + 1) begin // for loop based on iterations set 
 //ASMD Multiplier_TP004
   reset =1;
+    //ASMD Multiplier_TP004: assert reset
+  if (reset!=1) begin
+    $fatal();
+  end
   #10;
+    //ASMD Multiplier_TP004: product is zero
+  if (product!=0) begin
+    $fatal();
+  end
   reset = 0;
   word0 = 4'b0011;
   word1 = 4'b0010;
   start = 1;
   #30;
+    //ASMD Multiplier_TP003
+  if (ready == 0) begin
+    $fatal();
+  end
   start = 0;
-  //ASMD Multiplier_TP004
   wait(ready == 1);
+    //ASMD Multiplier_TP003
+  if(ready!=1) begin
+    $display("ready was not asserted correctly");
+    $fatal();
+  end
   //ASMD Multiplier_TP003
   $display("3*2 = %d, product = %b", word0 * word1,product);
   #100;// wait time so that the product resets correctly
