@@ -29,10 +29,26 @@ module asmd_multiplier_tb;
   );
 
 always #5 clk = ! clk;
+
+//
+//ASMD Multiplier_TP001: Verify Table 1
+//
+
 initial begin
   $dumpfile("asmd_multiplier.vcd");
   $dumpvars(0,asmd_multiplier_tb);
+  $display("ASMD Multiplier_TP001: Design implemented");
 end
+
+always @(posedge clk) begin
+  if (reset) begin
+    @(posedge clk)
+    if (product != 0) begin
+      $fatal();
+    end
+  end
+end
+
 integer i;// add integer outside of initial begin
 initial begin
   clk = 0;
@@ -41,6 +57,7 @@ initial begin
   word0 = 4'b0000;
   word1 = 4'b0000;
 for (i = 0; i < num_iterations; i = i + 1) begin // for loop based on iterations set 
+//ASMD Multiplier_TP004
   reset =1;
   #10;
   reset = 0;
@@ -49,12 +66,13 @@ for (i = 0; i < num_iterations; i = i + 1) begin // for loop based on iterations
   start = 1;
   #30;
   start = 0;
+  //ASMD Multiplier_TP004
   wait(ready == 1);
+  //ASMD Multiplier_TP003
   $display("3*2 = %d, product = %b", word0 * word1,product);
   #100;// wait time so that the product resets correctly
 
 end
 $finish;// finish so that the loop wont continously loop ADD A SEMICOLON ISAIAH!!!
 end
-
 endmodule
