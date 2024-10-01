@@ -7,7 +7,7 @@ SRC_FILE=src/*.v
 INC_DIR= +incdir+=/src/*
 
 testbench:
-	iverilog -c file_list.txt -Wall tb/tb_asmd_multipler.v -o $@ 
+	iverilog -c file_list.txt -Wall tb/tb_asmd_multiplier.v -o $@ 
 
 tb_layered:
 	iverilog -Wall -g2012  -c file_list.txt -Wall tb tb/tb_asmd_multiplier.v -o $@
