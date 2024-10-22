@@ -14,7 +14,7 @@ reg start;
 reg clk = 0;
 reg reset;
 reg [2*word_length-1:0] model_product;
-
+wire [2*word_length-1:0] product_netlist;
 
 // ASMD multiplier design-under-test (DUT)
 asmd_multiplier #(
@@ -30,6 +30,24 @@ asmd_multiplier_inst (
   .clk(clk),
   .reset(reset)
 );
+
+//asmd multiplier netlist design-under-test (DUT)
+asmd_multiplier_netlist 
+asmd_multiplier_netlist_inst (
+ .product(product_netlist),
+ .ready(ready_netlist),
+ .word0(word0),
+ .word1(word1),
+ .start(start),
+ .clk(clk),
+ .reset(reset)
+);
+
+always @(*) begin
+  if(product != product_netlist) begin
+      $error("product mismatch\n");
+  end
+end
 
 
 always @ (posedge clk) begin
@@ -51,6 +69,15 @@ initial begin
     $display("TP002: pass");
   end
 end
+
+//confirm that netlist product and rtl product output are equivalent.
+always @(*) begin
+  if(product != product_netlist) begin
+      $error("product mismatch\n");
+  end
+end
+
+
 
 
 // Monitor Ready and Product signals for both RTL and Netlist
